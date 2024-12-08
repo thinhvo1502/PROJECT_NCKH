@@ -2,25 +2,26 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
- * @format
  */
 
 import React from 'react';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screen/HomeScreen';
+import MainScreen from './src/screen/MainScreen';
 function App() {
   const Stack = createNativeStackNavigator();
 
   return (
-    <View>
-       <NavigationContainer>
+    <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name='MainS' component={MainScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    </View>
+
   )
- 
 }
+export default App
+
+

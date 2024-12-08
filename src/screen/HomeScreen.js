@@ -1,42 +1,69 @@
-import { TouchableOpacity, View, Text } from "react-native"
+import React from 'react';
+import { TouchableOpacity, View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
-export default HomeScreen = () => {
-
-    return (
-        <View styles = {styles.container}>
-            <View style = {styles.header}>
-                <Text style = {styles.itemTxt}>Tên ứng dụng</Text>
-            </View>
-            <View style = {styles.container}>
-            <TouchableOpacity style = {styles.itemBtn}>
-                <Text style = {styles.itemTxt}>Bắt đầu</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style = {styles.itemBtn}>
-                <Text style = {styles.itemTxt}>Hướng dẫn</Text>
-            </TouchableOpacity>
-            </View>
+const HomeScreen = () => {
+  return (
+    <View style={styles.safeArea}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Ứng dụng sinh chú thích ảnh</Text>
         </View>
-    )
-}
-const styles = {
-    container: {
-        backgroundColor: 'black',
-        // justifyContent: 'center',
-        alignItem: 'center',
-        color: 'white',
-    },
-    header: {
-        flex: 0.1,
-    },
-    container: {
-        flex: 0.9,
-        justifyContent: 'center',
-        alignItem: 'center'
-    },
-    itemBtn: {
+        <View style={styles.content}>
+          <TouchableOpacity style={styles.button} accessibilityRole="button">
+            <Text style={styles.buttonText}>Bắt đầu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} accessibilityRole="button">
+            <Text style={styles.buttonText}>Hướng dẫn</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+};
 
-    },
-    itemTxt: {
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#121212', // Dark background for better contrast
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#121212',
+  },
+  header: {
+    padding: 20,
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#333',
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#ffffff',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  button: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 25,
+    marginVertical: 10,
+    width: '100%',
+    height: '20%',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    color: '#ffffff',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+});
 
-    }
-}
+export default HomeScreen;
+
